@@ -1,6 +1,9 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import DownloadLink from "react-download-link";
+import logo from "./logo.svg";
+import "./App.css";
+
+const handleColumns = () => "Tiago,Fernando,de,Almeida";
 
 function App() {
   return (
@@ -10,14 +13,12 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <DownloadLink
+          label="Download"
+          filename="arquivoTemplate.csv"
+          exportFile={handleColumns}
+          tagName="button" //tagName é opcional, caso não passar o visual do componente irá ser um "link" para download
+        />
       </header>
     </div>
   );
